@@ -1,0 +1,151 @@
+manage_youtube_video_creation:
+  description: >
+    Comprehensively manage the YouTube video preparation process, including:
+    - Conducting in-depth market research
+    - Generating high-potential video titles
+    - Crafting an engaging video description
+    - Creating a compelling email newsletter
+
+    Key Deliverables:
+    - Detailed research table with 15 competitive videos
+    - 10 potential high click-through-rate titles
+    - Comprehensive video description
+    - Engaging email announcement
+
+    Video Topic: {video_topic}
+    Video Details: {video_details}
+
+    Research Guidelines:
+    - Ensure 15 unique, high-performing videos in the research table
+    - Validate all video URLs
+    - Capture accurate view counts, publication dates, and channel metrics
+
+    Reporting Requirements:
+    - Use a structured, easy-to-read format
+    - Include detailed competitive analysis
+    - Provide actionable insights for video creation
+  expected_output: >
+    A comprehensive report containing:
+    - 15 detailed competitive video entries
+    - 10 potential titles optimized for click-through rate
+    - A compelling video description
+    - A draft email newsletter
+    - Insights and recommendations for video production
+  agent: youtube_manager
+
+manage_youtube_video_research:
+  description: >
+    Conduct extensive research on YouTube to identify the top 15 high-performing videos 
+    related to the given topic. Your mission is to:
+    - Discover relevant, high-performing videos
+    - Compile a detailed research CSV with critical metrics
+    - Ensure data accuracy and relevance
+
+    Research Criteria:
+    - Minimum 15 unique videos
+    - Verified video URLs
+    - Accurate performance metrics
+    - No duplicate entries
+
+    Detailed Research CSV Requirements:
+    - Title of the video
+    - View count
+    - Days since publication
+    - Channel subscriber count
+    - Full video URL
+
+    Video Topic: {video_topic}
+    Video Details: {video_details}
+
+    Technical Specifications:
+    - Use semicolon (;) as the CSV delimiter
+    - Ensure data integrity and precision
+    - Validate all collected information
+  expected_output: >
+    A structured CSV with the following format:
+    Video Title; View Count; Days Since Published; Channel Subscriber Count; Video URL
+    [Example: How to Master CrewAI; 250,000; 45; 5,000; https://www.youtube.com/watch?v=example]
+  agent: research_manager
+
+create_youtube_video_title:
+  description: >
+    Develop 10 highly engaging video titles that:
+    - Capture the essence of the video topic
+    - Maximize click-through potential
+    - Adhere to YouTube title best practices
+
+    Key Considerations:
+    - Maximum 70 characters
+    - Use insights from competitive research
+    - Create titles that are:
+      * Intriguing
+      * Descriptive
+      * Actionable
+      * Keyword-optimized
+
+    Video Topic: {video_topic}
+    Video Details: {video_details}
+  expected_output: >
+    A list of 10 potential titles, such as:
+    - CrewAI Mastery: Build Your AI Workforce in 60 Minutes
+    - Unlock AI Automation: The Ultimate CrewAI Crash Course
+    - CrewAI Secrets: Transform Complex Tasks with AI Agents
+    - From Beginner to Pro: CrewAI Tutorial Unleashed
+  agent: title_creator
+
+create_youtube_video_description:
+  description: >
+    Craft a compelling video description that:
+    - Provides context and value
+    - Encourages viewer engagement
+    - Includes relevant resources and call-to-actions
+    - Matches the tone and style of previous successful descriptions
+
+    Description Components:
+    - Engaging opening
+    - Video value proposition
+    - Key learning outcomes
+    - Personal branding elements
+    - Relevant links and resources
+
+    Video Topic: {video_topic}
+    Video Details: {video_details}
+  expected_output: >
+    A comprehensive description including:
+    - Technical resource links
+    - Engaging video overview
+    - Personal branding section
+    - Call-to-action for viewers
+    - Optional sections for timestamps and additional resources
+  agent: description_creator
+
+create_email_announcement_for_new_video:
+  description: >
+    Develop an email announcement that:
+    - Generates excitement about the new video
+    - Matches the creator's communication style
+    - Provides clear value proposition
+    - Encourages viewer interaction
+
+    Email Composition Requirements:
+    - Captivating subject line
+    - Personal, conversational tone
+    - Clear video preview and highlights
+    - Engaging call-to-action
+    - Consistent branding
+
+    Video Topic: {video_topic}
+    Video Details: {video_details}
+
+    Mandatory Steps:
+    - Create initial draft
+    - Prepare for human review
+    - Incorporate feedback
+  expected_output: >
+    A complete email draft including:
+    - Compelling subject line
+    - Personalized greeting
+    - Video overview and key takeaways
+    - Direct links or preview
+    - Signature matching creator's style
+  agent: email_creator
